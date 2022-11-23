@@ -5,4 +5,61 @@
   width: 100vw;
 
   padding: 0 10vw;
+
+  main{
+    border-top: 1px solid $blue-grey;
+  }
+
+  &__prod{
+
+    padding: 64px 0;
+
+    &-company{
+      color: $orange;
+      text-transform: uppercase;
+      font-size: 16px;
+      
+      padding-bottom: 24px;
+    }
+
+    &-name{
+      font-size: 48px;
+      margin-bottom: 40px;
+    }
+
+    &-desc{
+      color: $blue-grey-d;
+      line-height: 32px;
+      padding-bottom: 24px;
+    }
+
+    &-pricing{
+      padding-bottom: 24px;
+    }
+
+    &-discount{
+      display: flex;
+      align-items: center;
+      margin-bottom: 8px;
+
+      &-rate{
+        font-weight: 700;
+        color: $orange;
+        background: $orange-pale;
+
+        padding: 2px 8px;
+
+        border-radius: 8px;
+
+        margin-left: 16px;
+      }
+    }
+
+    &-baseprice{
+      font-weight: 700;
+      color: $blue-grey;
+      text-decoration: line-through;
+    }
+
+  }
 }
