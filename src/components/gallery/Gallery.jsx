@@ -2,10 +2,12 @@ import { useRef } from "react"
 import { useEffect } from "react"
 import { useBEM } from "../../customHooks"
 import GalleryThumb from "./GalleryThumb"
+import useAppStore from "../../app/store"
 
 const Gallery = () => {
 
     const [B,E] = useBEM('gallery')
+    const setLightboxShow = useAppStore((state) => state.setLightboxShow)
 
     const index = useRef(1);
     
@@ -42,7 +44,7 @@ const Gallery = () => {
         <div className={B()}>
             {/* <img src={displayImg()} alt="" /> */}
             <section className={E('img-main')}>
-                <div id="img-window" ref={imgWindow} className={E('img-window')}>
+                <div onClick={() => {setLightboxShow(true)}} id="img-window" ref={imgWindow} className={E('img-window')}>
                     <div className={E('img-slider')}>
                         <img id="image-1" src="images/image-product-1.jpg" alt="" />
                         <img id="image-2" src="images/image-product-2.jpg" alt="" />

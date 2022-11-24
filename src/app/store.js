@@ -14,6 +14,8 @@ const appStore = (set) => ({
     },
     newItems: 0,
     setNewItems: (num) => set({ newItems: num }),
+    lightboxShow: false,
+    setLightboxShow: (bool) => set({ lightboxShow: bool }),
 })
 
 const useAppStore = create(appStore);

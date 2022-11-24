@@ -3,13 +3,19 @@ import NavbarDesktop from './components/navbarDesktop/NavbarDesktop';
 import Gallery from './components/gallery/Gallery';
 import { useBEM } from './customHooks';
 import AddToCart from './components/addToCart/AddToCart';
+import Lightbox from './components/lightbox/Lightbox';
+import useAppStore from './app/store';
 
 function App() {
 
   const [B,E] = useBEM('App')
 
+  const lightboxShow = useAppStore((state) => state.lightboxShow)
+
   return (
     <div className={B()}>
+      {lightboxShow && <Lightbox/>}
+
       <NavbarDesktop/>
       
       <main>
