@@ -14,17 +14,19 @@ const AddToCart = () => {
     const addToCart = useAppStore(state => state.addToCart)
 
     const addItem = () => {
-        addToCart(
-            {
-                itemId: tOrderId.current,
-                itemName: 'Fall Limited Edition Sneakers',
-                itemImgUrl: 'images/image-product-1-thumbnail.jpg',
-                itemPrice: 125.00,
-                itemAmt: amt,
-            }
-        )
-
-        tOrderId.current += 1;
+        if(amt !== 0){
+            addToCart(
+                {
+                    itemId: tOrderId.current,
+                    itemName: 'Fall Limited Edition Sneakers',
+                    itemImgUrl: 'images/image-product-1-thumbnail.jpg',
+                    itemPrice: 125.00,
+                    itemAmt: amt,
+                }
+            )
+    
+            tOrderId.current += 1;
+        }
     }
 
     return(
