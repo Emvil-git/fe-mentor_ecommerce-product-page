@@ -1,9 +1,29 @@
 .gallery{
     width: 400px;
 
-    img{
-        width: 100%;
-        border-radius: 16px;
+    // img{
+    //     width: 100%;
+    //     border-radius: 16px;
+    // }
+
+    &__img{
+        
+        &-window{
+            width: 400px;
+
+            overflow: hidden;
+
+            border-radius: 16px;
+
+            img{
+                width: 400px;
+                object-fit: contain;
+            }
+        }
+
+        &-slider{
+            display: flex;
+        }
     }
 
     &__thumbs{
