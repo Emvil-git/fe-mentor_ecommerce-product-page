@@ -1,3 +1,5 @@
+import Cart from "../cartComponent/Cart";
+
 const { useBEM } = require("../../customHooks")
 
 const NavbarDesktop = () => {
@@ -19,7 +21,8 @@ const NavbarDesktop = () => {
             </div>
 
             <div className={E('icons')}>
-                <img src="images/icon-cart.svg" alt="" />
+                {/* <img src="images/icon-cart.svg" alt="" /> */}
+                <Cart/>
                 <img src="images/image-avatar.png" alt="" className={E('avatar')}/>
             </div>
         </div>
