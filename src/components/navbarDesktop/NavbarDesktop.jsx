@@ -4,6 +4,7 @@ const NavbarDesktop = () => {
 
     const [B,E] = useBEM('navdesk')
 
+
     return(
         <div className={B()}>
             <div>
