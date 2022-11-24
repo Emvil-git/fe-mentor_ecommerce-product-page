@@ -1,4 +1,8 @@
 .navdesk{
+
+    position: sticky;
+
+    top: 0;
     width: 100%;
 
     display: flex;
@@ -8,6 +12,10 @@
     height: 102px;
 
     justify-content: space-between;
+
+    border-bottom: 1px solid $blue-grey;
+
+    background: $white;
 
     div:first-of-type{
         display: flex;

@@ -2,17 +2,25 @@
 @import './_global_vars';
 @import './components/navbarDesktop/NavbarDesktop.scss';
 @import './components/gallery/Gallery.scss';
+@import './components/addToCart/AddToCart.scss';
+@import './components/addToCart/cartAmt/CartAmt.scss';
 
 *{
   margin: 0;
   box-sizing: border-box;
 }
 
+button{
+  font-family: 'Kumbh Sans', sans-serif;
+}
+
 body {
   margin: 0;
+  width: 100vw;
   font-family: 'Kumbh Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 code {

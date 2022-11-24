@@ -2,6 +2,7 @@ import './App.scss';
 import NavbarDesktop from './components/navbarDesktop/NavbarDesktop';
 import Gallery from './components/gallery/Gallery';
 import { useBEM } from './customHooks';
+import AddToCart from './components/addToCart/AddToCart';
 
 function App() {
 
@@ -31,6 +32,8 @@ function App() {
 
             <p className={E('prod-baseprice')}>$250.00</p>
           </section>
+
+          <AddToCart/>
         </div>
       </main>
 
