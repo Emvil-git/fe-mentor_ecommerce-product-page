@@ -1,5 +1,6 @@
 import './App.scss';
 import NavbarDesktop from './components/navbarDesktop/NavbarDesktop';
+import Gallery from './components/gallery/Gallery';
 import { useBEM } from './customHooks';
 
 function App() {
@@ -11,6 +12,9 @@ function App() {
       <NavbarDesktop/>
       
       <main>
+
+        <Gallery/>
+
         <div className={E('prod')}>
           <h2 className={E('prod-company')}>Sneaker Company</h2>
 
