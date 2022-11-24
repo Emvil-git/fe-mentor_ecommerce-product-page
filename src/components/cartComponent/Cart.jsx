@@ -1,6 +1,7 @@
 import { useState } from "react";
 import useAppStore from "../../app/store";
 import { useBEM } from "../../customHooks";
+import CartItem from "./CartItem";
 
 const Cart = () => {
 
@@ -31,6 +32,17 @@ const Cart = () => {
         if (cartItems.length === 0) return(
             <div className={E('empty')}>
                 <span>Your cart is empty.</span>
+            </div>
+        )
+
+        return(
+            <div className={E('filled')}>
+            <div className={E('filled-items')}>
+            {cartItems.map(
+                item => <CartItem item={item}/>
+            )}
+            </div>
+            <button className={E('filled-btn')}> Checkout </button>
             </div>
         )
     }

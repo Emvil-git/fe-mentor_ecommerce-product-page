@@ -32,11 +32,22 @@
         display: flex;
 
         justify-content: space-between;
+    }
+
+    &-thumb{
+        height: 80px;
+        width: 80px;
+        border-radius: 8px;
+        overflow: hidden;
+
+        position: relative;
 
         img{
-            height: 80px;
-            width: 80px;
-            border-radius: 8px;
+            height: 100%;
+        }
+
+        &--selected{
+            opacity: 0.5;
         }
     }
 }

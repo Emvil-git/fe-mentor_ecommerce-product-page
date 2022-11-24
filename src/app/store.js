@@ -9,7 +9,7 @@ const appStore = (set) => ({
     },
     removeFromCart: (itemId) => {
         set((state) => ({
-            cart: state.cart.filter(item => item.itemId != itemId),
+            cart: state.cart.filter(item => item.itemId !== itemId),
         }))
     },
     hasNotif: false,
