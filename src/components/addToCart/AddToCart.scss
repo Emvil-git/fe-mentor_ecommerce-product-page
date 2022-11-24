@@ -2,6 +2,10 @@
     display: flex;
     width: 100%;
 
+    button{
+        cursor: pointer;
+    }
+
     &__btn{
         display: flex;
         justify-content: center;

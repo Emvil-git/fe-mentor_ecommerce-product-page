@@ -8,6 +8,8 @@ const Cart = () => {
     const [B,E] = useBEM('cart')
     const [cartStatus, setCartStatus] = useState(null);
     const cartItems = useAppStore(state => state.cart);
+    const newItems = useAppStore(state => state.newItems);
+    const setNewItems = useAppStore(state => state.setNewItems);
 
     const openDrop = () => {
         switch(cartStatus){
@@ -21,6 +23,7 @@ const Cart = () => {
     }
 
     const handleClick = () => {
+        setNewItems(0);
         if (cartStatus === 'open') {
             setCartStatus('close')
         } else {
@@ -47,9 +50,15 @@ const Cart = () => {
         )
     }
 
+    const handleNotif = () => {
+        if (newItems > 0) return E('icons', 'hasnew')
+        return E('icon')
+    }
+
     return(
         <div className={B()}>
-            <button onClick={handleClick}>
+            <button onClick={handleClick} className={handleNotif()} notifval={`${newItems}`}>
+                {newItems > 0 && <span className={E('notif')}>{newItems}</span>}
                 <img src="images/icon-cart.svg" alt="" />
             </button>
             <section className={openDrop()}>

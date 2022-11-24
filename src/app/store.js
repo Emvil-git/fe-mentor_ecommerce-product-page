@@ -12,9 +12,8 @@ const appStore = (set) => ({
             cart: state.cart.filter(item => item.itemId !== itemId),
         }))
     },
-    hasNotif: false,
-    notifTrue: () => set({ hasNotif: true }),
-    notifFalse: () => set({ hasNotif: false }),
+    newItems: 0,
+    setNewItems: (num) => set({ newItems: num }),
 })
 
 const useAppStore = create(appStore);

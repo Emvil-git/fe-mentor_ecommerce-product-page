@@ -12,6 +12,7 @@ const AddToCart = () => {
     const [amt, setAmt] = useState(0)
 
     const addToCart = useAppStore(state => state.addToCart)
+    const setNewItems = useAppStore(state => state.setNewItems)
 
     const addItem = () => {
         if(amt !== 0){
@@ -25,6 +26,8 @@ const AddToCart = () => {
                 }
             )
     
+            setNewItems(amt)
+
             tOrderId.current += 1;
         }
     }
