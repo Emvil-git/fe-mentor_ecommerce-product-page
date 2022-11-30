@@ -2,7 +2,7 @@ import { useBEM } from "../../customHooks";
 import { useRef } from "react";
 import useAppStore from "../../app/store"
 
-const GalleryMobile = () => {
+const GalleryMobile = ({width}) => {
 
     const [B,E] = useBEM('gallery-mobile')
 
@@ -10,15 +10,15 @@ const GalleryMobile = () => {
     const imgWindow = useRef();
     const setLightboxShow = useAppStore((state) => state.setLightboxShow)
 
-    const galHeight = document.querySelector('.gallery-mobile__img-main').clientHeight;
+    // const galHeight = document.querySelector('.gallery-mobile__img-main').clientHeight;
 
-    console.log(galHeight)
+    // console.log(galHeight)
 
     const pressNext = () => {
         index.current = index.current === 4 ? 1 : index.current + 1;
         imgWindow.current.scrollTo({
             top: 0,
-            left: galHeight * (index.current - 1),
+            left: width * (index.current - 1),
             behavior: 'smooth'
         })
     }
@@ -27,7 +27,7 @@ const GalleryMobile = () => {
         index.current = index.current === 1 ? 4 : index.current - 1;
         imgWindow.current.scrollTo({
             top: 0,
-            left: galHeight * (index.current - 1) ,
+            left: width * (index.current - 1) ,
             behavior: 'smooth'
         })
     }
@@ -35,7 +35,7 @@ const GalleryMobile = () => {
     return(
         <div className={B()}>
             <section className={E('img-main')}>
-                <div style={{'--galHt':`${Math.round(galHeight/2)}px`}} className={E('btn-div')}>
+                <div style={{'--galHt':`${Math.round(width/2)}px`}} className={E('btn-div')}>
                     <button onClick={pressPrev}>
                         <img src="images/icon-previous.svg" alt="" />
                     </button>

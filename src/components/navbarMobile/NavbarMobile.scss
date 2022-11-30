@@ -1,0 +1,45 @@
+.navmobile{
+    position: sticky;
+
+    top: 0;
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    height: 72px;
+
+    justify-content: space-between;
+
+    border-bottom: 1px solid $blue-grey;
+
+    background: $white;
+
+    z-index: 4;
+
+    padding: 0 16px;
+
+    div{
+        display: flex;
+        align-items: center !important;
+    }
+
+    button{
+        border: none;
+        background: none;
+    }
+
+    &__menu{
+        margin-right: 16px;
+    }
+
+    &__logo{
+        transform: translateY(-2px);
+    }
+
+    &__avatar{
+        height: 32px;
+        margin-left: 16px;
+    }
+}

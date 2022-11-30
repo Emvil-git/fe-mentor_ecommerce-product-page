@@ -1,5 +1,6 @@
 import './App.scss';
 import NavbarDesktop from './components/navbarDesktop/NavbarDesktop';
+import NavbarMobile from './components/navbarMobile/NavbarMobile';
 import Gallery from './components/gallery/Gallery';
 import GalleryMobile from './components/galleryMobile/GalleryMobile';
 import { useBEM } from './customHooks';
@@ -17,15 +18,21 @@ function App() {
   console.log(wWidth)
 
   const respondGallery = () => {
-    if (wWidth <= 425) return <GalleryMobile/>
+    if (wWidth <= 425) return <GalleryMobile width={wWidth}/>
     return <Gallery/>
+  }
+
+  const respondNavbar = () => {
+    if (wWidth <= 425) return <NavbarMobile width={wWidth}/>
+    return <NavbarDesktop/>
   }
 
   return (
     <div className={B()}>
       {lightboxShow && <Lightbox/>}
 
-      <NavbarDesktop/>
+      {/* <NavbarDesktop/> */}
+      {respondNavbar()}
       
       <main>
 

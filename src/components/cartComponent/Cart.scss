@@ -1,6 +1,8 @@
 .cart{
     position: relative;
 
+    z-index: 999;
+
     button{
         background: none;
         border: none;
@@ -126,6 +128,15 @@
                 color: black;
                 margin-left: 6px;
             }
+        }
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    .cart{
+        &__drop{
+            width: 100vw;
+            right: 0;
         }
     }
 }
