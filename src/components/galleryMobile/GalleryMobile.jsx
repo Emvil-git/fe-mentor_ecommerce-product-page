@@ -6,17 +6,40 @@ const GalleryMobile = () => {
 
     const [B,E] = useBEM('gallery-mobile')
 
+    const index = useRef(1);
     const imgWindow = useRef();
     const setLightboxShow = useAppStore((state) => state.setLightboxShow)
+
+    const galHeight = document.querySelector('.gallery-mobile__img-main').clientHeight;
+
+    console.log(galHeight)
+
+    const pressNext = () => {
+        index.current = index.current === 4 ? 1 : index.current + 1;
+        imgWindow.current.scrollTo({
+            top: 0,
+            left: galHeight * (index.current - 1),
+            behavior: 'smooth'
+        })
+    }
+
+    const pressPrev = () => {
+        index.current = index.current === 1 ? 4 : index.current - 1;
+        imgWindow.current.scrollTo({
+            top: 0,
+            left: galHeight * (index.current - 1) ,
+            behavior: 'smooth'
+        })
+    }
 
     return(
         <div className={B()}>
             <section className={E('img-main')}>
-                <div className={E('btn-div')}>
-                    <button>
+                <div style={{'--galHt':`${Math.round(galHeight/2)}px`}} className={E('btn-div')}>
+                    <button onClick={pressPrev}>
                         <img src="images/icon-previous.svg" alt="" />
                     </button>
-                    <button>
+                    <button onClick={pressNext}>
                         <img src="images/icon-next.svg" alt="" />
                     </button>
                 </div>
