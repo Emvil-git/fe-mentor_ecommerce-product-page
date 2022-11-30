@@ -7,23 +7,39 @@ import { useBEM } from './customHooks';
 import AddToCart from './components/addToCart/AddToCart';
 import Lightbox from './components/lightbox/Lightbox';
 import useAppStore from './app/store';
+import { useState, useEffect } from 'react';
+
+const getWidth = () => {
+  const {innerWidth} = window
+  return innerWidth
+}
 
 function App() {
 
   const [B,E] = useBEM('App')
+  const [width, setWidth] = useState(getWidth());
 
   const lightboxShow = useAppStore((state) => state.lightboxShow);
-  const wWidth = window.innerWidth;
 
-  console.log(wWidth)
+  useEffect(() => {
+    const handleResize = () => {
+      setWidth(getWidth())
+    }
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, [])
 
   const respondGallery = () => {
-    if (wWidth <= 425) return <GalleryMobile width={wWidth}/>
+    if (width <= 425) return <GalleryMobile width={width}/>
     return <Gallery/>
   }
 
   const respondNavbar = () => {
-    if (wWidth <= 425) return <NavbarMobile width={wWidth}/>
+    if (width <= 425) return <NavbarMobile width={width}/>
     return <NavbarDesktop/>
   }
 
