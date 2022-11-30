@@ -89,7 +89,34 @@
     }
 
     &__prod{
-      padding: 0;
+      padding: 24px;
+
+      &-company{        
+        padding-bottom: 16px;
+      }
+  
+      &-name{
+        font-size: 32px;
+        margin-bottom: 16px;
+      }
+
+  
+      &-pricing{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+
+      }
+  
+  
+      &-baseprice{
+        font-weight: 700;
+        color: $blue-grey;
+        transform: translateY(-4px);
+        text-decoration: line-through;
+      }
+  
     }
   }
 }

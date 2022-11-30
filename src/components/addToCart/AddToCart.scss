@@ -33,3 +33,15 @@
         }
     }
 }
+
+@media only screen and (max-width: 425px){
+    .addtocart{
+        flex-direction: column;
+
+        &__btn{
+            height: 48px;
+
+            margin: 16px 0;
+        }
+    }
+}
