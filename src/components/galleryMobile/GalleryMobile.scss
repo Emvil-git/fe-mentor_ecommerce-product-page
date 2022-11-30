@@ -47,7 +47,7 @@
             }
 
             &:last-of-type{
-                left: calc(var(--galHt));
+                left: calc(var(--galHt) * 2 - 50px);
             }
         }
     }

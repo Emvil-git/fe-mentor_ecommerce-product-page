@@ -43,7 +43,7 @@ const GalleryMobile = ({width}) => {
                         <img src="images/icon-next.svg" alt="" />
                     </button>
                 </div>
-                <div onClick={() => {setLightboxShow(true)}} id="img-window" ref={imgWindow} className={E('img-window')}>
+                <div id="img-window" ref={imgWindow} className={E('img-window')}>
                     <div className={E('img-slider')}>
                         <img id="image-1" src="images/image-product-1.jpg" alt="" />
                         <img id="image-2" src="images/image-product-2.jpg" alt="" />

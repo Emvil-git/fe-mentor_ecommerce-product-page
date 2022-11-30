@@ -5,7 +5,13 @@ const CartItem = ({item}) => {
 
     const [B,E] = useBEM('cart-item')
 
-    const removeFromCart = useAppStore(state => state.removeFromCart)
+    const removeFromCart = useAppStore(state => state.removeFromCart);
+    const setNewItems = useAppStore(state => state.setNewItems);
+
+    const removeItem = () => {
+        removeFromCart(item.itemId)
+        setNewItems(0)
+    }
 
     return(
         <div className={B()}>
@@ -17,7 +23,7 @@ const CartItem = ({item}) => {
                     <span className={E('price-total')}>{`$${item.itemPrice * item.itemAmt}.00`}</span>
                 </span>
             </section>
-            <button onClick={() => {removeFromCart(item.itemId)}}>
+            <button onClick={removeItem}>
                 <img src="images/icon-delete.svg" alt="" />
             </button>
         </div>
