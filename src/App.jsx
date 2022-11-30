@@ -1,6 +1,7 @@
 import './App.scss';
 import NavbarDesktop from './components/navbarDesktop/NavbarDesktop';
 import Gallery from './components/gallery/Gallery';
+import GalleryMobile from './components/galleryMobile/GalleryMobile';
 import { useBEM } from './customHooks';
 import AddToCart from './components/addToCart/AddToCart';
 import Lightbox from './components/lightbox/Lightbox';
@@ -10,7 +11,15 @@ function App() {
 
   const [B,E] = useBEM('App')
 
-  const lightboxShow = useAppStore((state) => state.lightboxShow)
+  const lightboxShow = useAppStore((state) => state.lightboxShow);
+  const wWidth = window.innerWidth;
+
+  console.log(wWidth)
+
+  const respondGallery = () => {
+    if (wWidth <= 425) return <GalleryMobile/>
+    return <Gallery/>
+  }
 
   return (
     <div className={B()}>
@@ -20,7 +29,8 @@ function App() {
       
       <main>
 
-        <Gallery/>
+        {respondGallery()}
+        {/* <Gallery/> */}
 
         <div className={E('prod')}>
           <h2 className={E('prod-company')}>Sneaker Company</h2>

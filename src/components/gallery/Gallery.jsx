@@ -24,7 +24,7 @@ const Gallery = () => {
             index.current = index.current === 4 ? 1 : index.current + 1;
         
         },5000)
-    })
+    },[])
 
     const selectThumb = ind => {
         if (index.current === ind) return E('thumb', 'showing')

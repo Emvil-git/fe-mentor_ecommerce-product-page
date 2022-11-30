@@ -9,15 +9,15 @@ const LightboxGallery = () => {
 
     const setLightboxShow = useAppStore((state) => state.setLightboxShow)
 
-    const index = useRef(1);
+    const lbIndex = useRef(1);
     
     const lbImgWindow = useRef();
 
     const selectImg = (ind) => {
-        index.current = ind;
+        lbIndex.current = ind;
         lbImgWindow.current.scrollTo({
             top: 0,
-            left: 480 * (index.current - 1) ,
+            left: 480 * (lbIndex.current - 1) ,
             behavior: 'smooth'
         })
     }
