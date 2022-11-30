@@ -134,9 +134,12 @@
 
 @media only screen and (max-width: 425px) {
     .cart{
+        position: initial;
+
         &__drop{
-            width: 100vw;
-            right: 0;
+            width: calc(100vw - 16px);
+            right: 8px;
+            top: 80px;
         }
     }
 }
