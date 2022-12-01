@@ -78,7 +78,51 @@
   }
 }
 
-@media only screen and (max-width: 425px){
+@media only screen and (max-width: 1024px){
+  .App{
+    padding: 0 0;
+    height: 100vh;
+    main {
+      display: flex;
+      flex-direction: column;
+
+      padding: 5vw;
+    }
+
+    &__prod{
+      padding: 48px 24px 24px 24px;
+
+      &-company{        
+        padding-bottom: 16px;
+      }
+  
+      &-name{
+        font-size: 32px;
+        margin-bottom: 16px;
+      }
+
+  
+      &-pricing{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+
+      }
+  
+  
+      &-baseprice{
+        font-weight: 700;
+        color: $blue-grey;
+        transform: translateY(-4px);
+        text-decoration: line-through;
+      }
+  
+    }
+  }
+}
+
+@media only screen and (max-width: 501px){
   .App{
     padding: 0;
     main{

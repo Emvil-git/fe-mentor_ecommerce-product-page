@@ -34,12 +34,12 @@ function App() {
   }, [])
 
   const respondGallery = () => {
-    if (width <= 425) return <GalleryMobile width={width}/>
+    if (width <= 501) return <GalleryMobile width={width}/>
     return <Gallery/>
   }
 
   const respondNavbar = () => {
-    if (width <= 425) return <NavbarMobile width={width}/>
+    if (width <= 1024) return <NavbarMobile width={width}/>
     return <NavbarDesktop/>
   }
 
